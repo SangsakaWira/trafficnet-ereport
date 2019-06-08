@@ -112,6 +112,26 @@ app.post("/laporan",urlencodedParser,function(req,res){
     })
 })
 
+app.patch("/laporan/:id",function(req,res){
+    laporan.findByIdAndUpdate(req.params.id, function (err, data) {
+        if (err) {
+            console.log("Something went wrong")
+        } else {
+            res.send(data)
+        }
+    })
+})
+
+app.delete("/laporan/:id",function(req,res){
+    laporan.findByIdAndDelete(req.params.id,function(err,data){
+        if(err){
+            console.log("Not Success")
+        }else{
+            res.send(data)
+        }
+    })
+})
+
 app.listen(port,function(){
     console.log("Server is running")
 })
