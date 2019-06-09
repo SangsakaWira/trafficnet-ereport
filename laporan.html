@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Pendaftaran</title>
+  </head>
+  <body>
+    <h1>Pendaftaran</h1>
+    <!-- status:{
+        type:String
+    },
+    jenis_laporan:String,
+    pukul:{
+        type:Date,
+        trim:true
+    },
+    long:String,
+    lat:String,
+    tanggal:String -->
+    <form method="POST" action="/laporan">
+        <select class="custom-select" id="inputGroupSelect01" name="status">
+            <option selected>Status...</option>
+            <option value="Checked">Checked</option>
+            <option value="Not_Checked">Not Checked</option>
+        </select>
+        <select class="custom-select" id="inputGroupSelect01" name="jenis_laporan">
+            <option selected>Jenis Laporan...</option>
+            <option value="Kriminal">Kriminal</option>
+            <option value="Kebakaran">Kebakaran</option>
+            <option value="Berbahaya">Berbahaya</option>
+            <option value="Jalan Rusak">Jalan Rusak</option>
+        </select>
+        <input type="text" placeholder="Deskripsi" name="deskripsi">
+        <input type="datetime-local" placeholder="Tanggal" name="tanggal">
+        <input type="text" placeholder="Latitude" name="lat">
+        <input type="text" placeholder="Longitude" name="long">
+        <input type="file" placeholder="file" name="photo">
+        <button>Submit</button>
+    </form>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

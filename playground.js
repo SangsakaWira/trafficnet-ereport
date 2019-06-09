@@ -13,11 +13,13 @@ let user = mongoose.model("playground",{
     username:{
         type:String,
         required:true,
-        trim:true
+        trim:true,
+        lowercase:true
     },
     email:{
         type:String,
         required:true,
+        lowercase:true,
         validate(value){
             if(!validator.isEmail(value)){
                 throw new Error("Email is not valid")
@@ -26,10 +28,13 @@ let user = mongoose.model("playground",{
     },
     password:{
         type:String,
+        trim:true,
+        minlegth:7,
         validate(value){
-            if(value<0){
-                throw new Error("No negative age")
+            if(value.includes("password")){
+                throw new Error("length must be longer than 6 letters or the password contain 'password' ")
             }
+
         }
     },
     confirmpass:String,

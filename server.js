@@ -15,19 +15,19 @@ let user = require("./model/users")
 app.post("/register", urlencodedParser, function (req, res) {
     let data_user = req.body
     console.log(data_user.email)
-    console.log(data_user.name)
+    console.log(data_user.username)
     user.findOne({
-        username: data_user.name,
+        username: data_user.username,
         email: data_user.email
     }, function (err, data) {
         console.log(data)
         if (err) {
-            console.log("Something went wrong")
+            console.log("Something went wrong! ",err)
         } else {
             if (data == null) {
                 user.create(data_user, function (err) {
                     if (err) {
-                        console.log("Something is wrong!")
+                        console.log("Something is wrong! ",err)
                     } else {
                         res.send({
                             message: "Success"
@@ -80,16 +80,16 @@ app.get("/user/:id", function (req, res) {
     })
 })
 
-// GET ALL LAPORAN
-app.get("/laporan", function (req, res) {
-    laporan.find(function (err, data) {
-        if (err) {
-            console.log("Something went wrong")
-        } else {
-            res.send(data)
-        }
-    })
-})
+// // GET ALL LAPORAN
+// app.get("/laporan", function (req, res) {
+//     laporan.find(function (err, data) {
+//         if (err) {
+//             console.log("Something went wrong")
+//         } else {
+//             res.send(data)
+//         }
+//     })
+// })
 
 // GET ALL LAPORAN BY ID
 app.get("/laporan/:id", function (req, res) {
@@ -105,7 +105,7 @@ app.get("/laporan/:id", function (req, res) {
 app.post("/laporan",urlencodedParser,function(req,res){
     laporan.create(req.body, function (err, data) {
         if (err) {
-            console.log("Something went wrong")
+            console.log("Something went wrong", err)
         } else {
             res.send(data)
         }
@@ -130,6 +130,14 @@ app.delete("/laporan/:id",function(req,res){
             res.send(data)
         }
     })
+})
+
+app.get("/register",function(req,res){
+    res.sendFile(__dirname+"/index.html")
+})
+
+app.get("/laporan",function(req,res){
+    res.sendFile(__dirname+"/laporan.html")
 })
 
 app.listen(port,function(){
