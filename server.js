@@ -90,6 +90,17 @@ app.get("/user/:id", function (req, res) {
     })
 })
 
+app.patch("/user/:id",function(req,res){
+    user.findByIdAndUpdate(req.params.id, req.body
+        ,{new: true, runValidators:true},function (err, data) {
+        if (err) {
+            console.log("Something went wrong")
+        } else {
+            res.send(data)
+        }
+    })
+})
+
 // GET ALL LAPORAN
 app.get("/laporan", function (req, res) {
     laporan.find(function (err, data) {
@@ -123,7 +134,8 @@ app.post("/laporan",urlencodedParser,function(req,res){
 })
 
 app.patch("/laporan/:id",function(req,res){
-    laporan.findByIdAndUpdate(req.params.id, function (err, data) {
+    laporan.findByIdAndUpdate(req.params.id,req.body
+        ,{new: true, runValidators:true},function (err, data) {
         if (err) {
             console.log("Something went wrong")
         } else {
