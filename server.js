@@ -25,15 +25,25 @@ app.post("/register", urlencodedParser, function (req, res) {
             console.log("Something went wrong! ",err)
         } else {
             if (data == null) {
-                user.create(data_user, function (err) {
-                    if (err) {
-                        console.log("Something is wrong! ",err)
-                    } else {
-                        res.send({
-                            message: "Success"
-                        })
-                    }
-                })
+                console.log(req.body.password)
+                console.log(req.body.confirmpass)
+                if(req.body.password === req.body.confirmpass){
+                    user.create(data_user, function (err) {
+                        if (err) {
+                            console.log("Something is wrong! ",err)
+                            res.redirect("/register")
+                        } else {
+                            res.send({
+                                message: "Success"
+                            })
+                        }
+                    })
+                }
+                else{
+                    res.send({
+                        message:"password is not same as confirmed"
+                    })
+                }
             } else {
                 res.send({
                     message: "Email or Username is already taken"
@@ -105,7 +115,7 @@ app.get("/laporan/:id", function (req, res) {
 app.post("/laporan",urlencodedParser,function(req,res){
     laporan.create(req.body, function (err, data) {
         if (err) {
-            console.log("Something went wrong", err)
+            console.log("Something went wrong",err)
         } else {
             res.send(data)
         }
