@@ -90,16 +90,16 @@ app.get("/user/:id", function (req, res) {
     })
 })
 
-// // GET ALL LAPORAN
-// app.get("/laporan", function (req, res) {
-//     laporan.find(function (err, data) {
-//         if (err) {
-//             console.log("Something went wrong")
-//         } else {
-//             res.send(data)
-//         }
-//     })
-// })
+// GET ALL LAPORAN
+app.get("/laporan", function (req, res) {
+    laporan.find(function (err, data) {
+        if (err) {
+            console.log("Something went wrong")
+        } else {
+            res.send(data)
+        }
+    })
+})
 
 // GET ALL LAPORAN BY ID
 app.get("/laporan/:id", function (req, res) {
@@ -146,7 +146,7 @@ app.get("/register",function(req,res){
     res.sendFile(__dirname+"/index.html")
 })
 
-app.get("/laporan",function(req,res){
+app.get("/laporanpage",function(req,res){
     res.sendFile(__dirname+"/laporan.html")
 })
 

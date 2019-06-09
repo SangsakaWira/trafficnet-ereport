@@ -24,14 +24,13 @@ const fieldSchema = mongoose.Schema({
         lowercase:true,
         validate(value){
             if(value.toLowerCase().includes("password")){
-                throw new Error("password format invalid, may not contains 'password'")
+                throw new Error("password format invalid, it may not contains 'password'")
             }
         },
         trim:true,
         required:true
     },
-    noktp:String,
-    confirmpass:String
+    noktp:String
 })
 
 let users = mongoose.model("user",fieldSchema)
