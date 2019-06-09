@@ -92,7 +92,7 @@ app.get("/user/:id", function (req, res) {
 
 app.patch("/user/:id",function(req,res){
     user.findByIdAndUpdate(req.params.id, req.body
-        ,{new: true, runValidators:true},function (err, data) {
+        ,{new: true},function (err, data) {
         if (err) {
             console.log("Something went wrong")
         } else {
@@ -135,7 +135,7 @@ app.post("/laporan",urlencodedParser,function(req,res){
 
 app.patch("/laporan/:id",function(req,res){
     laporan.findByIdAndUpdate(req.params.id,req.body
-        ,{new: true, runValidators:true},function (err, data) {
+        ,{new: true},function (err, data) {
         if (err) {
             console.log("Something went wrong")
         } else {
