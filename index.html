@@ -15,6 +15,21 @@
     <form method="POST" action="/register">
         <input type="text" placeholder="username" name="username">
         <input type="email" placeholder="email" name="email">
+        <select class="custom-select" id="inputGroupSelect01" name="tipe_user">
+          <option selected>Tipe...</option>
+          <option value="Pelapor">Pelapor</option>
+          <option value="Pelaksana Tugas">Pelaksana Tugas</option>
+        </select>
+        <label>Jika Pelaksana Tugas</label>
+        <select class="custom-select" id="inputGroupSelect01" name="tipe_servis">
+          <option selected>Tipe...</option>
+          <option value="Damkar">Pelapor</option>
+          <option value="Polisi">Polisi</option>
+          <option value="Damkar">Damkar</option>
+          <option value="Ambulance">Ambulance</option>
+          <option value="Tentara">Tentara</option>
+          <option value="VIP">VIP</option>
+        </select>
         <input type="password" placeholder="password" name="password" id="pass">
         <input type="password" placeholder="confirm password" name="confirmpass" id="confirmpass">
         <button>Submit</button>

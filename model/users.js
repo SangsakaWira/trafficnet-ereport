@@ -19,6 +19,13 @@ const fieldSchema = mongoose.Schema({
         required:true
 
     },
+    tipe_user:{
+        type:String,
+        required:true
+    },
+    tipe_servis:{
+        type:String
+    },
     password:{
         type:String,
         lowercase:true,

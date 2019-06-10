@@ -14,8 +14,7 @@ let user = require("./model/users")
 // REGISTER
 app.post("/register", urlencodedParser, function (req, res) {
     let data_user = req.body
-    console.log(data_user.email)
-    console.log(data_user.username)
+    console.log(req.body)
     user.findOne({
         username: data_user.username,
         email: data_user.email
