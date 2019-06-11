@@ -165,6 +165,26 @@ app.listen(port,function(){
     console.log("Server is running")
 })
 
-app.get("laporanbytype/:filter",function(req,res){
-    
+app.get("laporanbystatus/:filter",function(req,res){
+    laporan.find({
+        status:req.params.filter
+    },function(err,doc){
+        if(err){
+            res.send(err)
+        }else{
+            res.send(doc)
+        }
+    })
+})
+
+app.get("laporanbyjenis/:filter",function(req,res){
+    laporan.find({
+        jenis_laporan:req.params.filter
+    },function(err,doc){
+        if(err){
+            res.send(err)
+        }else{
+            res.send(doc)
+        }
+    })
 })
