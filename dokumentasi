@@ -1,0 +1,23 @@
+REGISTER
+POST ---> trafficnet.id:3005/register
+
+LOGIN
+POST ---> trafficnet.id:3005/login
+
+Get All USERS
+GET ---> trafficnet.id:3005/users
+
+GET ALL USER BY ID
+GET ---> trafficnet.id:3005/user/:id
+
+GET ALL LAPORAN
+GET ---> trafficnet.id:3005/laporan
+
+CREATE NEW LAPORAN
+POST ---> trafficnet.id:3005/laporan
+
+GET ALL LAPORAN BY ID
+GET ---> trafficnet.id:3005/laporan/:id
+
+UPDATE LAPORAN BY ID
+PATCH ---> trafficnet.id:3005/laporan/:id

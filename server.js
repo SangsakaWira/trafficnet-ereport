@@ -68,7 +68,7 @@ app.post("/login", urlencodedParser, function (req, res) {
 })
 
 // GET ALL USER DEMO NTAR PASS TAK HILANGIN
-app.get("/user", function (req, res) {
+app.get("/users", function (req, res) {
     user.find(function (err, data) {
         if (err) {
             console.log("Something went wrong")
@@ -163,4 +163,8 @@ app.get("/laporanpage",function(req,res){
 
 app.listen(port,function(){
     console.log("Server is running")
+})
+
+app.get("laporanbytype/:filter",function(req,res){
+    
 })
