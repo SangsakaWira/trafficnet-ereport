@@ -5,7 +5,7 @@ let urlencodedParser = bodyParser.urlencoded({
     extended: false
 })
 
-let port = process.env.PORT || 3005;
+let port = process.env.PORT || 7000;
 const app = express()
 
 let laporan = require("./model/laporan")

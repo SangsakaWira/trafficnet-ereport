@@ -13,7 +13,7 @@ const fieldSchema = mongoose.Schema({
     },
     long:String,
     lat:String,
-    tanggal:String,
+    tanggal:Date,
     route:{
         type:Array
     }
