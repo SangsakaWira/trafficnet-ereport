@@ -7,13 +7,9 @@ const fieldSchema = mongoose.Schema({
         type:String
     },
     jenis_laporan:String,
-    pukul:{
-        type:Date,
-        trim:true
-    },
     long:String,
     lat:String,
-    tanggal:Date,
+    tanggal:Date
     
 })
 

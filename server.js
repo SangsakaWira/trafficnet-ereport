@@ -123,7 +123,13 @@ app.get("/laporan/:id", function (req, res) {
 })
 
 app.post("/laporan",urlencodedParser,function(req,res){
-    laporan.create(req.body, function (err, data) {
+    laporan.create({
+        status:req.body.status,
+        jenis_laporan:req.body.jenis_laporan,
+        long:req.body.long,
+        lat:req.body.lat,
+        tanggal:new Date()
+    }, function (err, data) {
         if (err) {
             console.log("Something went wrong",err)
         } else {
