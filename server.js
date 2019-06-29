@@ -1,5 +1,8 @@
 const express = require("express");
 const bodyParser = require("body-parser")
+const mongoose = require("mongoose")
+
+mongoose.connect("mongodb://localhost/trafficnet-ereport",{useNewUrlParser:true})
 
 let urlencodedParser = bodyParser.urlencoded({
     extended: false

@@ -1,8 +1,6 @@
 const mongoose = require("mongoose")
 const validator = require("validator")
 
-mongoose.connect("mongodb://localhost/trafficnet-ereport",{useNewUrlParser:true})
-
 const fieldSchema = mongoose.Schema({
     username:{
         type:String,

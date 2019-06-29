@@ -1,7 +1,5 @@
 const mongoose = require("mongoose")
 
-mongoose.connect("mongodb://localhost/trafficnet-ereport",{useNewUrlParser:true})
-
 const fieldSchema = mongoose.Schema({
     status:{
         type:String
